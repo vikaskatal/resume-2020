@@ -1,0 +1,207 @@
+$font1 : 'Roboto', sans-serif;
+$font2 : 'Montserrat', sans-serif;
+
+
+
+//Default Theme
+
+$primary-clr : #fc6454;
+$primary-clr-hover : #ffd810;
+
+$primary-clr-dark: #de5036;
+$primary-clr-light: #ff9480;
+
+$grad-dark: #ff5440;
+$grad-light : #fc812e;
+$grad-op :rgba(187, 63, 49, 0.25);
+
+
+$primary-naruto : #f6af42;
+$primary-sakura : #ef848b;
+$primary-sasuke : #584877;
+
+
+$themes: (
+        'theme-naruto': (
+                'primary-clr' : #f6af42,
+                'primary-clr-hover' : #ff9902,
+
+
+                'skill-grad-dark' : #db962d,
+                'skill-grad-op' :rgba(246, 175, 66, 0.31),
+                'skill-grad' : linear-gradient(to right, #db962d, #f6af42),
+                'skill-shadow' :2px 7px 5px 3px rgba(200, 136, 41, 0.25),
+                'skill-hover-shadow' : 0px 10px 16px 5px rgba(175, 120, 36, 0.29),
+
+                'arrow-head' : #000 transparent transparent transparent,
+                'arrow-line' : #000
+
+        ),
+        'theme-sakura': (
+                'primary-clr' : #ef848b,
+                'primary-clr-hover' : #494545,
+
+                'skill-grad-dark' : #d77077,
+                'skill-grad-op' :rgba(239, 131, 138, 0.24),
+                'skill-grad' : linear-gradient(to right, #d77077, #e8b0b4),
+                'skill-shadow' :2px 7px 5px 3px rgba(189, 101, 107, 0.69),
+                'skill-hover-shadow' : 0px 10px 16px 5px rgba(189, 101, 107, 0.69),
+
+
+                'arrow-head' : #fff transparent transparent transparent,
+                'arrow-line' : #fff
+        ),
+        'theme-sasuke': (
+                'primary-clr' : #584877,
+                'primary-clr-hover' : #000,
+
+                'skill-grad-dark' : #8c76a2,
+                'skill-grad-op' :rgba(87, 72, 119, 0.37),
+                'skill-grad' : linear-gradient(to right, #574877, #8c76a2),
+                'skill-shadow' :2px 7px 5px 3px rgba(76, 65, 101, 0.37),
+                'skill-hover-shadow' : 0px 10px 16px 5px rgba(56, 43, 86, 0.37),
+
+
+                'arrow-head' : #fff transparent transparent transparent,
+                'arrow-line' : #fff
+        )
+) !default;
+
+@mixin themify($property, $key, $themes: $themes) {
+  @each $theme, $colors in $themes {
+    .#{$theme} & {
+      #{$property}: map-get($colors, $key);
+    }
+  }
+}
+
+
+
+@mixin color($arg) {
+  @include themify('color', $arg);
+}
+
+@mixin border-color($arg) {
+  @include themify('border-color', $arg);
+}
+
+@mixin background-color($arg) {
+  @include themify('background-color', $arg);
+}
+@mixin box-shadow($arg) {
+  @include themify('box-shadow', $arg);
+}
+@mixin background($arg) {
+  @include themify('background', $arg);
+}
+
+
+.scroll-btn {
+  @include background-color('primary-clr');
+  &:hover{
+    @include background-color('primary-clr-hover');
+  }
+}
+
+.spark-btn{
+  @include color('primary-clr');
+  @include border-color('primary-clr');
+
+  &:before, &:after{
+    @include background-color('primary-clr');
+  }
+  &:hover {
+    @include background-color('primary-clr');
+  }
+
+  .arrow-line{
+    @include background-color('arrow-line');
+  }
+  .arrow{
+    @include border-color('arrow-head');
+  }
+}
+
+.hero{
+  .left{
+    @include background-color('primary-clr');
+  }
+}
+
+.employer h4, .employer .web, .work .owl-carousel .owl-item:hover .project-name{
+  @include color('primary-clr');
+}
+
+.employer .web:hover{
+  @include color('primary-clr-hover');
+}
+
+.theme-loader.loader{
+  @include background-color('primary-clr');
+}
+
+.skills{
+  @include background-color('primary-clr');
+  .item h3{
+    @include color('skill-grad-dark');
+  }
+  .block{
+    p{
+      @include color('primary-clr');
+    }
+    .icon{
+      @include background-color('skill-grad-dark');
+      @include background('skill-grad');
+      @include box-shadow('skill-shadow');
+    }
+  }
+  .bar{
+    @include background-color('skill-grad-op');
+    span{
+      @include background-color('primary-clr');
+    }
+  }
+  .item:hover{
+    .block, .block .icon{
+      @include box-shadow('skill-hover-shadow');
+    }
+  }
+}
+
+
+.time-range:before{
+  @include background('skill-grad');
+}
+
+
+
+footer{
+  p a:hover, p a:focus, .social-icons li a:hover{
+    @include color('primary-clr');
+  }
+}
+
+
+
+$black : #000;
+$black-hover : #1c1c1c;
+
+$white-hover : #d1d0d0;
+
+$gray-light : #f1f1f1;
+$gray-dark : #e5e5e5;
+
+$gray-select : #e5e5e5;
+
+
+$blue : #266cdd;
+$blue-light : #006EFF;
+$blue-hover : #102686;
+
+
+
+
+
+
+
+

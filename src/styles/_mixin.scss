@@ -1,0 +1,36 @@
+@mixin desktops-large {
+  @media (min-width: 1500px) { @content; }
+}
+@mixin desktops-large-only {
+  @media (min-width: 1500px) { @content; }
+}
+
+@mixin air {
+  @media only screen and (max-width: 1499px) { @content; }
+}
+@mixin air-only {
+  @media (min-width: 1200px)  and (max-width: 1499px) { @content; }
+}
+
+@mixin desktops {
+  @media only screen and (max-width: 1199px) { @content; }
+}
+@mixin desktops-only {
+  @media (min-width: 992px) and (max-width: 1199px) { @content; }
+}
+
+@mixin tab {
+  @media only screen and (max-width: 991px) { @content; }
+}
+@mixin tab-only {
+  @media (min-width: 768px) and (max-width: 991px) { @content; }
+}
+
+@mixin phone {
+  @media only screen and (max-width: 767px) { @content; }
+
+}
+
+.anim{
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
