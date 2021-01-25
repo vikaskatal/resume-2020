@@ -2,11 +2,11 @@ import dp from '../assets/dp/vikk.jpg';
 import cv from '../assets/cv/Resume-Vikas-Katal.pdf';
 
 import angularjs from '../assets/icons/angularjs.png';
-import css from '../assets/icons/css.svg';
+// import css from '../assets/icons/css.svg';
 import html from '../assets/icons/html.svg';
 import js from '../assets/icons/js.png';
-import laravel from '../assets/icons/laravel.png';
-import node from '../assets/icons/node.svg';
+// import laravel from '../assets/icons/laravel.png';
+// import node from '../assets/icons/node.svg';
 import photoshop from '../assets/icons/photoshop.png';
 import php from '../assets/icons/php.svg';
 import react from '../assets/icons/react.png';
